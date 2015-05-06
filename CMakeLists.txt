@@ -114,12 +114,21 @@ include_directories(
 ## Declare a cpp executable
 #add_executable(beginner_tutorials_node src/beginner_tutorials_node.cpp)
 add_executable(position src/position.cpp)
+add_executable(theta src/theta.cpp)
+add_executable(p1 src/p1.cpp)
+
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
+
 target_link_libraries(position ${catkin_LIBRARIES})
+target_link_libraries(theta ${catkin_LIBRARIES})
+target_link_libraries(p1 ${catkin_LIBRARIES})
 
 # add_dependencies(beginner_tutorials_node beginner_tutorials_generate_messages_cpp)
+
 add_dependencies(position linefollower_pid_generate_messages_cpp)
+add_dependencies(theta linefollower_pid_generate_messages_cpp)
+add_dependencies(p1 linefollower_pid_generate_messages_cpp)
 
 #add_executable(listener src/listener.cpp)
 #target_link_libraries(listener ${catkin_LIBRARIES})
